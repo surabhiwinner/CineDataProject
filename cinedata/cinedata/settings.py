@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'movies',
     'authentication',
-    'rest_framework_simplejwt'
+    'rest_framework_simplejwt',
+    "corsheaders",
+
 ]
 
 
@@ -52,6 +54,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -156,3 +159,8 @@ MEDIA_URL = '/media/'
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME' : timedelta(days=1)
 }
+
+
+CORS_ALLOWED_ORIGINS =[
+    'http://localhost:5173/',
+    ]
